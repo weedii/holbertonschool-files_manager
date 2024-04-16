@@ -1,11 +1,11 @@
-import Redis from 'redis';
+import Redis from "redis";
 
-export default class RedisClient {
+class RedisClient {
   constructor() {
     this.client = Redis.createClient();
 
-    this.client.on('error', (err) => {
-      console.error('Redis client error:', err);
+    this.client.on("error", (err) => {
+      console.error("Redis client error:", err);
     });
   }
 
@@ -49,3 +49,6 @@ export default class RedisClient {
     });
   }
 }
+
+const redisClient = new RedisClient();
+export default redisClient;
