@@ -26,6 +26,7 @@ class RedisClient {
     return new Promise((resolve, reject) => {
       this.client.get(key, (err, result) => {
         if (err) {
+          console.error("Error in get:", err); // Add this line for debugging
           reject(err);
         } else {
           resolve(result);
