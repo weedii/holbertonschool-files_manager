@@ -12,17 +12,10 @@ class RedisClient {
       console.error("Redis client error:", err);
     });
 
-    // Connect explicitly when an instance is created
     this.client.connect();
   }
 
-  async isAlive() {
-    // Wait for the client to connect before checking its status
-    await new Promise((resolve) => {
-      this.client.on("connect", () => {
-        resolve();
-      });
-    });
+  isAlive() {
     return this.client.connected;
   }
 
