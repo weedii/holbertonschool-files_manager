@@ -3,7 +3,6 @@ import redis from "redis";
 class RedisClient {
   constructor() {
     this.client = redis.createClient();
-    this.client.connect()
 
     this.client.on("connect", () => {
       console.log("Connected to Redis server");
