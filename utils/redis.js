@@ -16,7 +16,13 @@ class RedisClient {
     this.client.connect();
   }
 
-  isAlive() {
+  async isAlive() {
+    // Wait for the client to connect before checking its status
+    await new Promise((resolve) => {
+      this.client.on("connect", () => {
+        resolve();
+      });
+    });
     return this.client.connected;
   }
 
