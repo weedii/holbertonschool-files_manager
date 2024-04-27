@@ -1,8 +1,8 @@
-import Redis from "redis";
+import redis from "redis";
 
 class RedisClient {
   constructor() {
-    this.client = Redis.createClient();
+    this.client = redis.createClient();
     this.connected = false;
 
     this.client.on("connect", () => {
