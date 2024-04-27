@@ -2,7 +2,8 @@ import redis from "redis";
 
 class RedisClient {
   constructor() {
-    this.client = redis.createClient({ url: "redis://127.0.0.1:16380" });
+    this.client = redis.createClient();
+
 
     this.client.on("connect", () => {
       console.log("Connected to Redis server");
@@ -13,7 +14,7 @@ class RedisClient {
     });
   }
 
-  isAlive() {
+  async isAlive() {
     return this.client.connected;
   }
 
