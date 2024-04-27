@@ -5,7 +5,7 @@ export default class AppController {
   static getStatus = async (req, res) => {
     return res
       .status(200)
-      .json({ redis: redisClient.isAlive(), db: dbClient.isAlive() });
+      .json({ redis: redisClient.isAlive(), db: dbClient.isAlive() }); 
   };
 
   static getStats = async (req, res) => {
