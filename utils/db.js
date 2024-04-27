@@ -22,11 +22,11 @@ class DBClient {
     return !!this.client.db && Boolean(this.client.db);
   }
 
-  static async nbUsers() {
+  async nbUsers() {
     return this.client.db(this.dbName).collection("users").countDocuments();
   }
 
-  static async nbFiles() {
+  async nbFiles() {
     return this.client.db(this.dbName).collection("files").countDocuments();
   }
 }
