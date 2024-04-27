@@ -13,8 +13,8 @@ class RedisClient {
     });
   }
 
-  async isAlive() {
-    return await this.client.connected;
+  isAlive() {
+    return this.client.connected;
   }
 
   async get(key) {
