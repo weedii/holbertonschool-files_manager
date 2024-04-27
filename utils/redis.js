@@ -13,6 +13,10 @@ class RedisClient {
     });
   }
 
+  async connectt() {
+    await this.client.connect();
+  }
+
   isAlive() {
     return this.client.connected;
   }
